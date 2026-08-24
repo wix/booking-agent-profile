@@ -1,24 +1,22 @@
 # booking-agent-profile
 
-Shared, **keyless** USP/UCP platform profile for the USP Agent.
+Shared, keyless USP/UCP platform profile for the USP Agent.
 
-**Canonical URL:** `https://profile.booking-agent.dev/platform-profile.json`
+Businesses fetch the profile at:
 
-Public hosting repo: [`wix/booking-agent-profile`](https://github.com/wix/booking-agent-profile).
+`https://profile.booking-agent.dev/platform-profile.json`
 
-**Publisher of record:** `https://profile.booking-agent.dev/platform-profile.json` (GitHub Pages custom domain on this repo; HTTPS enforced).
+The document is keyless: it carries no signing keys. One profile is used for the whole platform.
 
-`https://wix.github.io/booking-agent-profile/platform-profile.json` 301s to the canonical URL. Personal cutover `https://yahalomran.github.io/booking-agent-profile/platform-profile.json` remains until an explicit retirement.
-
-Wix DNS CNAME host `profile` points at `wix.github.io`. Do not edit apex or `www` A records.
-
-## Source of truth
-
-Content is generated from `platform_profile_doc()` in [`yahalomran/linkusp-cli`](https://github.com/yahalomran/linkusp-cli). This repo **publishes** the committed `platform-profile.json` artifact and validates it (schema + keyless). Do not hand-edit the JSON as a second SoT.
+This repository publishes the committed `platform-profile.json` artifact at the URL above (GitHub Pages, HTTPS).
 
 ## Validate locally
+
+If you clone this repository:
 
 ```bash
 python3 tools/build.py
 python3 -m pytest -q
 ```
+
+Those checks confirm the committed JSON matches the vendored USP/UCP schemas and stays keyless. They do not own the document content.
