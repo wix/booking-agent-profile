@@ -31,6 +31,11 @@ def test_build_py_passes():
 def test_artifact_is_object_with_usp_and_ucp():
     doc = json.loads(ARTIFACT.read_text(encoding="utf-8"))
     assert "usp" in doc and "ucp" in doc
-    assert doc["usp"]["services"] == {"dev.usp.services": [{"transport": "rest"}]}
+    assert doc["usp"]["services"] == {
+        "dev.usp-protocol.services": [{"transport": "rest"}]
+    }
     assert doc["ucp"]["version"] == "2026-04-08"
-    assert "com.stripe" in doc["ucp"]["payment_handlers"]
+    assert "com.stripe.payments" in doc["ucp"]["payment_handlers"]
+    text = ARTIFACT.read_text(encoding="utf-8")
+    assert "https://usp.dev" not in text
+    assert "dev.usp.services" not in text
