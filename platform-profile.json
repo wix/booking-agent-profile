@@ -8,27 +8,27 @@
           "version": "2026-04-08"
         }
       ],
-      "dev.usp.services.paid_bookings": [
+      "dev.usp-protocol.services.paid_bookings": [
         {
           "extends": "dev.ucp.shopping.checkout",
-          "schema": "https://usp.dev/schemas/services/paid_bookings.json",
-          "spec": "https://usp.dev/specification#7-ucp-native-mode",
-          "version": "2026-02-09"
+          "schema": "https://usp-protocol.dev/schemas/services/paid_bookings.json",
+          "spec": "https://usp-protocol.dev/specification#7-ucp-native-mode",
+          "version": "2026-08-20"
         }
       ]
     },
     "payment_handlers": {
-      "com.stripe": [
+      "com.stripe.payments": [
         {
           "available_instruments": [
             {
-              "type": "shared_payment_token"
+              "type": "link"
             }
           ],
-          "id": "com.stripe",
-          "schema": "https://docs.stripe.com/agentic-commerce/shared-payment-token/schemas/instrument.json",
-          "spec": "https://docs.stripe.com/agentic-commerce/shared-payment-token",
-          "version": "2026-04-08"
+          "id": "stripe_payments",
+          "schema": "https://ucp.stripe.com/payments/2026-06-25/schema.json",
+          "spec": "https://docs.stripe.com/agentic-commerce/ucp/stripe-payments-handler",
+          "version": "2026-06-25"
         }
       ]
     },
@@ -37,30 +37,30 @@
   },
   "usp": {
     "capabilities": {
-      "dev.usp.services.availability": [
+      "dev.usp-protocol.services.availability": [
         {
-          "schema": "https://usp.dev/schemas/services/availability.json",
-          "spec": "https://usp.dev/specification#4-availability",
+          "schema": "https://usp-protocol.dev/schemas/services/availability.json",
+          "spec": "https://usp-protocol.dev/specification#4-availability",
           "version": "2026-08-14"
         }
       ],
-      "dev.usp.services.bookings": [
+      "dev.usp-protocol.services.bookings": [
         {
-          "schema": "https://usp.dev/schemas/services/booking.json",
-          "spec": "https://usp.dev/specification#5-booking-lifecycle",
+          "schema": "https://usp-protocol.dev/schemas/services/booking.json",
+          "spec": "https://usp-protocol.dev/specification#5-booking-lifecycle",
           "version": "2026-08-14"
         }
       ],
-      "dev.usp.services.catalog": [
+      "dev.usp-protocol.services.catalog": [
         {
-          "schema": "https://usp.dev/schemas/services/catalog.json",
-          "spec": "https://usp.dev/specification#3-service-catalog",
+          "schema": "https://usp-protocol.dev/schemas/services/catalog.json",
+          "spec": "https://usp-protocol.dev/specification#3-service-catalog",
           "version": "2026-08-14"
         }
       ]
     },
     "services": {
-      "dev.usp.services": [
+      "dev.usp-protocol.services": [
         {
           "transport": "rest"
         }
