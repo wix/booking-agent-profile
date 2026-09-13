@@ -13,7 +13,7 @@
           "extends": "dev.ucp.shopping.checkout",
           "schema": "https://usp-protocol.dev/schemas/services/paid_bookings.json",
           "spec": "https://usp-protocol.dev/specification#7-ucp-native-mode",
-          "version": "2026-02-09"
+          "version": "2026-08-20"
         }
       ]
     },
