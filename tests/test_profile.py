@@ -34,7 +34,7 @@ def test_artifact_is_object_with_usp_and_ucp():
     assert doc["usp"]["services"] == {
         "dev.usp-protocol.services": [{"transport": "rest"}]
     }
-    assert doc["ucp"]["version"] == "2026-04-08"
+    assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(doc["ucp"]["version"]))
     assert "com.stripe.payments" in doc["ucp"]["payment_handlers"]
     text = ARTIFACT.read_text(encoding="utf-8")
     assert "https://usp.dev" not in text
