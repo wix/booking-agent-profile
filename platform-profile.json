@@ -1,11 +1,34 @@
 {
   "ucp": {
     "capabilities": {
+      "dev.ucp.common.payment.terms": [
+        {
+          "extends": [
+            "dev.ucp.shopping.checkout",
+            "dev.ucp.shopping.order"
+          ],
+          "schema": "https://ucp.dev/2026-08-25/schemas/common/payment_terms.json",
+          "spec": "https://ucp.dev/latest/specification/payment/extensions/terms/",
+          "version": "2026-08-25"
+        }
+      ],
       "dev.ucp.shopping.checkout": [
         {
-          "schema": "https://ucp.dev/schemas/shopping/checkout.json",
-          "spec": "https://ucp.dev/specification/checkout",
+          "schema": "https://ucp.dev/latest/schemas/shopping/checkout.json",
+          "spec": "https://ucp.dev/latest/specification/shopping/checkout/",
+          "version": "2026-08-25"
+        },
+        {
+          "schema": "https://ucp.dev/latest/schemas/shopping/checkout.json",
+          "spec": "https://ucp.dev/latest/specification/shopping/checkout/",
           "version": "2026-04-08"
+        }
+      ],
+      "dev.ucp.shopping.order": [
+        {
+          "schema": "https://ucp.dev/latest/schemas/shopping/order.json",
+          "spec": "https://ucp.dev/latest/specification/shopping/order",
+          "version": "2026-08-25"
         }
       ],
       "dev.usp-protocol.services.paid_bookings": [
@@ -33,7 +56,11 @@
       ]
     },
     "services": {},
-    "version": "2026-04-08"
+    "supported_versions": [
+      "2026-04-08",
+      "2026-08-25"
+    ],
+    "version": "2026-08-25"
   },
   "usp": {
     "capabilities": {
